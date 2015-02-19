@@ -39,6 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoFacTest\ImplementFirst.cs" />
+    <Compile Include="AutoFacTest\ImplementSecond.cs" />
+    <Compile Include="AutoFacTest\ITestInterface.cs" />
+    <Compile Include="AutoFacTest\TestService.cs" />
     <Compile Include="IForTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
