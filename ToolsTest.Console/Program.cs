@@ -25,9 +25,11 @@ namespace ToolsTest.ConsoleTest
 
             ILGenerator ilGenerator = methodBuilder.GetILGenerator();
 
-            ilGenerator.Emit(OpCodes.Ldstr,"hello,first emit!");
+            ilGenerator.Emit(OpCodes.Ldstr, "hello,first emit!");
 
-            ilGenerator.Emit(OpCodes.Call, typeof (Console).GetMethod("ReadLine"));
+            ilGenerator.Emit(OpCodes.Call, typeof(Console).GetMethod("WriteLine", new Type[] { typeof(String) }));
+
+            ilGenerator.Emit(OpCodes.Call, typeof(Console).GetMethod("ReadLine"));
 
             ilGenerator.Emit(OpCodes.Pop);
 
