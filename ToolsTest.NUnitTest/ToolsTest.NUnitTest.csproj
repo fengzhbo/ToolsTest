@@ -54,6 +54,7 @@
     <Compile Include="AutoFac\TestAutoFac.cs" />
     <Compile Include="Protobuf\TestProtobuf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StackExchange\TestRedis.cs" />
     <Compile Include="TestCaseFirst.cs" />
   </ItemGroup>
   <ItemGroup>
