@@ -14,13 +14,15 @@ namespace ToolsTest.CodeTimerTest
            // Redis_Init.InitDealerListTest_Model();
             //Redis_Init.InitDealerListTest_Field();
            // Redis_Init.InitDealerListTest();
-            Redis_Init.GetDealerDataTest();
+            //Redis_Init.GetDealerDataTest();
 
             //RedisClient.ReadDataOnly_Model_Deserialize();
 
             //RedisClient.ReadDataOnly_Field_ToModel();
 
             //RedisClient.ReadDataOnly_Model_Deserialize_List();
+
+            RedisClient.InsertVendorPrice_Model();
 
         }
     }

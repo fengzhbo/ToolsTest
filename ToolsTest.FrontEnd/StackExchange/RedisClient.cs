@@ -33,6 +33,18 @@ namespace ToolsTest.FrontEnd.StackExchange
         }
 
         #region 初始化数据
+
+        public static void InsertVendorPrice_Model()
+        {
+            var listPrices = new dal_dapper().GetVendorPriceList();
+
+            foreach (var dd in listPrices)
+            {
+                SaveToRedis(dd);
+            }
+
+        }
+
         public static void InsertVendorInfo_Field()
         {
             var listDealers = new dal_dapper().GetVendorList();
@@ -77,6 +89,19 @@ namespace ToolsTest.FrontEnd.StackExchange
             foreach (Dealer dd in listDealers)
             {
                 SaveToRedis(dd);
+            }
+
+        }
+
+        private static void SaveToRedis(VendorPrice price)
+        {
+            IDatabase db = redis.GetDatabase(1);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                ProtoBuf.Serializer.Serialize<VendorPrice>(ms, price);
+
+                db.HashSet("vendorprice", "id:" + price.PriceId.ToString(), ms.ToArray());
             }
 
         }
